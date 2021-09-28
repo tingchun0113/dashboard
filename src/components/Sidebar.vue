@@ -36,6 +36,7 @@
 export default {
   methods: {
     logout() {
+      localStorage.removeItem('cookie');
       this.$router.push("/login");
     }
   }
