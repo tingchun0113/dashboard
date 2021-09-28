@@ -1,9 +1,12 @@
 <template>
-  <div class="container w-80 mx-auto my-20 px-6 py-6 shadow rounded-md">
-    <h1 class="text-yellow-500 font-bold font-sans text-3xl text-center">
+  <div class="h-screen">
+    <div class="h-screen bg-container">
+
+    <div class="w-80 mx-auto my-20 px-6 py-6 shadow rounded-md bg-gradient-to-b from-yellow-500 to-yellow-100">
+    <h1 class="text-gray-50 font-bold font-sans text-3xl text-center">
       A8 Dashboard
     </h1>
-    <div class="h-0.5 bg-gray-200 w-36 mx-auto mt-2.5"></div>
+    <div class="h-0.5 bg-gray-100 w-36 mx-auto mt-2.5"></div>
     <form action="" @submit.prevent.stop="handleSubmit">
       <div class="flex flex-col my-5">
         <label class="my-2" for="username">Username</label>
@@ -42,6 +45,8 @@
         </button>
       </div>
     </form>
+  </div>
+    </div>
   </div>
 </template>
 
@@ -93,6 +98,16 @@ export default {
 </script>
 
 <style scoped>
+.bg-container {
+  background-image: url("https://i.redd.it/vda9rbt01en01.png");
+  width:100%;
+  height:100%; 
+  box-sizing:border-box;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+  position: fixed;
+}
 .isProcessing {
   opacity: 0.5;
   cursor: not-allowed;
