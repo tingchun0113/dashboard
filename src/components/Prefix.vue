@@ -20,7 +20,7 @@
         <input
           v-model="keyword"
           v-on:keyup.enter.stop.prevent="searchPrefix"
-          class="rounded p-2 mt-2 ml-2"
+          class="rounded border border-gray-900 p-2 mt-2 ml-2"
           type="text"
           placeholder="Try 209"
         />

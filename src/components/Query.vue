@@ -93,7 +93,7 @@
             id="domain"
             name="domain"
             v-model="domain"
-            class="required focus:ring-transparent rounded-sm bg-gray-100 text-yellow-600 h-48 mb-1"
+            class="required focus:ring-transparent p-2 rounded-sm bg-gray-100 text-yellow-600 h-48 mb-2"
             placeholder="Domain (必填)"
           ></textarea>
           <textarea
@@ -101,7 +101,7 @@
             id="key"
             name="key"
             v-model="key"
-            class="required focus:ring-transparent rounded-sm bg-gray-100 text-yellow-600 h-20"
+            class="required focus:ring-transparent p-2 rounded-sm bg-gray-100 text-yellow-600 h-20"
             placeholder="Key (未填代表全部清除)"
           ></textarea>
           <button
@@ -160,10 +160,10 @@ export default {
       }
     },
     getClient(e) {
-      if (e.target.textContent.length > 10) {
+      if (e.target.textContent.trim().length > 10) {
         return;
       }
-      this.client = e.target.textContent;
+      this.client = e.target.textContent.trim();
     },
     async searchEmpty() {
       if (!this.client) {
