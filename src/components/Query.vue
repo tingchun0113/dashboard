@@ -58,11 +58,11 @@
         >
           <thead>
             <tr>
-              <th class="border border-gray-700 p-1">IP Prefix</th>
-              <th class="border border-gray-700 p-1">Line business</th>
-              <th class="border border-gray-700 p-1">Lines</th>
-              <th class="border border-gray-700 p-1">Prefix</th>
               <th class="border border-gray-700 p-1">cdnGroup</th>
+              <th class="border border-gray-700 p-1">Prefix</th>
+              <th class="border border-gray-700 p-1">Lines</th>
+              <th class="border border-gray-700 p-1">Line business</th>
+              <th class="border border-gray-700 p-1">IP Prefix</th>
             </tr>
           </thead>
 
