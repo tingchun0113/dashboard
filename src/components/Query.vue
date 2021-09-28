@@ -205,7 +205,6 @@ export default {
         try {
           this.isLoading = true;
           const res = await infoAPI.getDomains({ client: this.client });
-
           const url = window.URL.createObjectURL(new Blob([res.data]));
           const a = document.createElement("a");
           a.href = url;
