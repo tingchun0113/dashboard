@@ -27,5 +27,8 @@ export default {
   },
   clearCache({ cdn, domain, key }) {
     return apiHelper.post("/clear_cache", { cdn, domain, key });
+  },
+  checkProtect() {
+    return apiHelper.get("/check/protect");
   }
 };

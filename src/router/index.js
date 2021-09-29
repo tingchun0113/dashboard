@@ -4,8 +4,6 @@ import login from "../views/Login.vue";
 //import home from '../views/Home.vue';
 import notFound from "../views/NotFound.vue";
 import client from "../views/Client.vue";
-import blacklist from "../views/Blacklist.vue";
-import mitigation from "../views/Mitigation.vue";
 
 Vue.use(VueRouter);
 
@@ -26,19 +24,24 @@ const routes = [
     redirect: "/client"
   },
   {
+    path: "/client",
+    name: "client",
+    component: client
+  },
+  {
     path: "/mitigation",
     name: "mitigation",
-    component: mitigation
+    component: () => import("../views/Mitigation.vue")
   },
   {
     path: "/blacklist",
     name: "blacklist",
-    component: blacklist
+    component: () => import("../views/Blacklist.vue")
   },
   {
-    path: "/client",
-    name: "client",
-    component: client
+    path: "/protect",
+    name: "protect",
+    component: () => import("../views/ProtectMode.vue")
   },
   {
     path: "/:catchAll(.*)",

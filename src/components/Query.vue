@@ -21,25 +21,25 @@
         </div>
         <button
           @click="searchEmpty"
-          class="ml-3 my-1 p-3 w-1/4 bg-yellow-500 rounded cursor-pointer text-center text-lg font-semibold text-white items-center hover:bg-yellow-600"
+          class="ml-3 my-1 p-3 w-1/4 bg-yellow-500 rounded cursor-pointer text-center text-lg font-semibold text-gray-900 items-center hover:bg-yellow-400"
         >
           查空site
         </button>
         <button
           @click="downloadDomains"
-          class="ml-3 my-1 p-3 w-1/4 bg-yellow-500 rounded cursor-pointer text-center text-lg font-semibold text-white items-center hover:bg-yellow-600"
+          class="ml-3 my-1 p-3 w-1/4 bg-yellow-500 rounded cursor-pointer text-center text-lg font-semibold text-gray-900 items-center hover:bg-yellow-400"
         >
           下載域名
         </button>
         <button
           @click="searchSLBIp"
-          class="ml-3 my-1 p-3 w-1/4 bg-yellow-500 rounded cursor-pointer text-center text-lg font-semibold text-white items-center hover:bg-yellow-600"
+          class="ml-3 my-1 p-3 w-1/4 bg-yellow-500 rounded cursor-pointer text-center text-lg font-semibold text-gray-900 items-center hover:bg-yellow-400"
         >
           查SLB IP list
         </button>
         <button
           @click="showInput"
-          class="ml-3 my-1 p-3 w-1/4 bg-yellow-500 rounded cursor-pointer text-center text-lg font-semibold text-white items-center hover:bg-yellow-600"
+          class="ml-3 my-1 p-3 w-1/4 bg-yellow-500 rounded cursor-pointer text-center text-lg font-semibold text-gray-900 items-center hover:bg-yellow-400"
         >
           清除緩存
         </button>
@@ -56,7 +56,7 @@
           v-if="isTable"
           class="ml-3 rounded border-collapse border border-gray-700"
         >
-          <thead>
+          <thead v-if="!isLoading">
             <tr>
               <th class="border border-gray-700 p-1">cdnGroup</th>
               <th class="border border-gray-700 p-1">Prefix</th>
@@ -246,6 +246,7 @@ export default {
           const res = await infoAPI.getSLBIpList({ client: this.client });
           if (res.data.value.length === 0) {
             this.isLoading = false;
+            this.isTable = false;
             Toast.fire({
               icon: "warning",
               title: "查無資料"

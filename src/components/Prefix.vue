@@ -5,7 +5,7 @@
         <div class="text-gray-900 text-2xl font-medium p-3">清洗中心清單</div>
         <button
           @click="refresh"
-          class="ml-3 p-3 m-1 bg-gray-900 rounded cursor-pointer text-base font-medium text-white items-center hover:bg-gray-700 hover:text-blue-300"
+          class="ml-3 p-3 m-1 bg-gray-900 rounded cursor-pointer text-base font-medium text-white items-center hover:bg-gray-700 hover:text-yellow-500"
         >
           Refresh
         </button>
@@ -26,7 +26,7 @@
         />
         <button
           @click="searchPrefix"
-          class="mt-2 bg-gray-900 hover:bg-gray-700 hover:text-blue-300 rounded text-white font-medium text-base px-4 mt-1"
+          class="mt-2 bg-gray-900 hover:bg-gray-700 hover:text-yellow-500 rounded text-white font-medium text-base px-4 mt-1"
         >
           Search
         </button>
