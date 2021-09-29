@@ -107,7 +107,7 @@
           <button
             @click="clearCache"
             type="button"
-            class="bg-red-500 rounded cursor-pointer text-center text-lg font-semibold text-white items-center hover:bg-red-600 h-12 mt-5"
+            class="bg-red-600 rounded cursor-pointer text-center text-lg font-semibold text-white items-center hover:bg-red-500 h-12 mt-5"
             :disabled="isProcessing"
             :class="{ isProcessing }"
           >
