@@ -28,22 +28,17 @@
         <Spinner v-if="isLoading" />
         <div v-if="isSlp" class="">
           <div v-if="!isLoading" class="">
-            <div class="text-gray-900 font-medium pl-3">Hostname</div>
-            <span class="text-gray-900 pl-3">{{ hostname }}</span
-            ><br /><br />
-            <div class="text-gray-900 font-medium pl-3">目前正在使用的IP</div>
-            <span class="text-gray-900 pl-3">{{ currentIp }}</span
-            ><br /><br />
-            <div class="text-gray-900 font-medium pl-3">原始設定的IP</div>
-            <span class="text-gray-900 pl-3">{{ originalIp }}</span
-            ><br /><br />
-            <div class="text-gray-900 font-medium pl-3">可使用IP列表</div>
-            <div
-              v-for="(item, index) in availableIps"
-              :key="index"
-              class="text-gray-900 pl-3"
-            >
-              {{ item }}
+            <div class="flex">
+              <div class="w-1/2">
+                <div class="text-gray-900 font-medium pl-3">Hostname</div>
+                <span class="text-gray-900 pl-3">{{ hostname }}</span
+                ><br /><br />
+              </div>
+              <div class="w-1/2">
+                  <div class="text-gray-900 font-medium pl-3">目前正在使用的IP</div>
+                  <span class="text-gray-900 pl-3">{{ currentIp }}</span
+                  ><br /><br />
+              </div>
             </div>
           </div>
         </div>
