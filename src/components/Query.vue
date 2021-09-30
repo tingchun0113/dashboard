@@ -5,8 +5,9 @@
         <div class="text-gray-900 text-2xl font-medium p-3">
           選擇客戶
         </div>
-        <div @click.stop="getClient" class="pl-3">
+        <div class="pl-3">
           <button
+            @click.stop="getClient"
             v-for="(cdn, index) in cdnResult"
             :key="index"
             type="button"
@@ -253,8 +254,8 @@ export default {
             });
             return;
           }
-          this.isTable = true;
           this.table = res.data.value;
+          this.isTable = true;
           this.isLoading = false;
         } catch (error) {
           this.isLoading = false;
@@ -303,6 +304,8 @@ export default {
               icon: "success",
               title: "清除成功"
             });
+            this.domain = "";
+            this.key = "";
           }
           this.isProcessing = false;
         } catch (error) {

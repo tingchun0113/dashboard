@@ -86,8 +86,8 @@ export default {
           });
           return;
         }
-        this.isProtected = true;
         this.protectModeTable = res.data.value;
+        this.isProtected = true;
         this.isLoading = false;
       } catch (error) {
         this.isLoading = false;

@@ -81,6 +81,7 @@ export default {
         });
         const cookie = res.data.value.setCookie;
         localStorage.setItem("cookie", cookie);
+        this.$store.commit("setAuthentication", this.username);
         this.$router.push("/home");
         this.isProcessing = false;
       } catch (e) {

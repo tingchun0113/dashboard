@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import store from "./../store";
 import login from "../views/Login.vue";
 //import home from '../views/Home.vue';
 import notFound from "../views/NotFound.vue";
@@ -44,6 +45,11 @@ const routes = [
     component: () => import("../views/ProtectMode.vue")
   },
   {
+    path: "/edit-ip",
+    name: "edit-ip",
+    component: () => import("../views/EditIp.vue")
+  },
+  {
     path: "/:catchAll(.*)",
     name: "notFound",
     component: notFound
@@ -53,6 +59,29 @@ const routes = [
 const router = new VueRouter({
   linkExactActiveClass: "active",
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  const cookie = localStorage.getItem("cookie");
+  let isAuthenticated = store.state.isAuthenticated;
+
+  if (cookie) {
+    isAuthenticated = true;
+  }
+
+  const pathsWithoutAuthentication = ["login"];
+
+  if (!isAuthenticated && !pathsWithoutAuthentication.includes(to.name)) {
+    next("/login");
+    return;
+  }
+
+  if (isAuthenticated && pathsWithoutAuthentication.includes(to.name)) {
+    next("/home");
+    return;
+  }
+
+  next();
 });
 
 export default router;

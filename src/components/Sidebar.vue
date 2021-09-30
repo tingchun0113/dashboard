@@ -27,6 +27,12 @@
       >
         上傳黑名單
       </router-link>
+      <router-link
+        to="edit-ip"
+        class="bg-gray-900 text-white text-lg p-2 rounded my-2 cursor-pointer hover:bg-gray-700 hover:text-yellow-500"
+      >
+        修改SLB IP
+      </router-link>
 
       <button
         @click="logout"
@@ -42,7 +48,7 @@
 export default {
   methods: {
     logout() {
-      localStorage.removeItem("cookie");
+      this.$store.commit("revokeAuthentication");
       this.$router.push("/login");
     }
   }

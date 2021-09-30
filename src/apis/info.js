@@ -30,5 +30,11 @@ export default {
   },
   checkProtect() {
     return apiHelper.get("/check/protect");
+  },
+  searchSlbIp({ ip, domain }) {
+    return apiHelper.post("/search/slb_ip", { ip, domain });
+  },
+  editSlbIp({ cookie, hostname, ip }) {
+    return apiHelper.post("/edit/slb_ip", { cookie, hostname, ip });
   }
 };

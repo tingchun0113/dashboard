@@ -26,7 +26,7 @@
         />
         <button
           @click="searchPrefix"
-          class="mt-2 bg-gray-900 hover:bg-gray-700 hover:text-yellow-500 rounded text-white font-medium text-base px-4 mt-1"
+          class="mt-2 bg-gray-900 hover:bg-gray-700 hover:text-yellow-500 rounded text-white font-medium text-base px-4"
         >
           Search
         </button>
