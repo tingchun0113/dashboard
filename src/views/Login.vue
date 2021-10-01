@@ -24,6 +24,7 @@
               id="password"
               name="password"
               v-model="password"
+              autocomplete="off"
               class="required mb-3 h-8 p-2 border-none focus:ring-transparent rounded-sm bg-gray-100 text-gray-500"
             />
             <label class="my-2" for="token">otpToken</label>
@@ -32,6 +33,7 @@
               id="otpToken"
               name="otpToken"
               v-model="otpToken"
+              autocomplete="off"
               class="required mb-3 h-8 p-2 border-none focus:ring-transparent rounded-sm bg-gray-100 text-gray-500"
             />
           </div>
