@@ -8,6 +8,7 @@
         src="https://www.apeiro8.com/images/logo.png"
         alt="apeiro8"
     /></router-link>
+    <div class="text-white text-center text-sm">v1.0.0</div>
   </header>
 </template>
 
